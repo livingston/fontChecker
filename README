@@ -1,1 +1,34 @@
 Unicode Font Checker
+
+* Detects the existance of fonts to display the Unicode Character of a particular language.
+* Currenlty detects support for 28 languages.
+
+Supported Languages:
+ * Arabic
+ * Avestan
+ * Bamum
+ * Bengali
+ * Carian
+ * Cryllic
+ * Devanagri
+ * Ethiopic
+ * Georgian
+ * Glagolitic
+ * Gothic
+ * Greek
+ * Gujarati
+ * Hebrew
+ * Egyptian Hieroglyphs
+ * Japanese
+ * Kannada
+ * Lao
+ * Latin
+ * Malayalam
+ * Mongolian
+ * Oriya
+ * Osmanya
+ * Syriac
+ * Tamil
+ * Telugu
+ * Thai
+ * Tibetan
