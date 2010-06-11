@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>Unicode Font Checker</title>
+  
+  <style>
+    body {
+      font:16px "Lucida Grande","Lucida Sans","Lucida Sans Unicode",Verdana,sans-serif;
+      color:#000;
+      cursor:default
+    }
+    
+    ol { float:left; margin:0 55px 0 0 }
+    li { margin:0 0 10px; padding:0 }
+    li span { display: inline-block }
+    li span:first-child { width: 200px }
+    li span:first-child ~ span { width: 50px }
+    li span.true { background:green }
+    li span.false { background:red }
+    li span.error { background:yellow }
+    
+    #footer { clear:both; padding:25px 0 0 }
+  </style>
+</head>
+<body>
+  <h2>Unicode Font Checker</h2>
+
+  <ol>
+    <li><span>Arabic</span> <span>&#x06c2;</span> <span>&#x06d2;</span> <span id='arabic'>&nbsp;</span></li>
+    <li><span>Avestan</span> <span>&#x10b00;</span> <span>&#x10b01;</span> <span id='avestan'>&nbsp;</span></li>
+    <li><span>Bamum</span> <span>&#xa6f3;</span> <span>&#xa6f4;</span> <span id='bamum'>&nbsp;</span></li>
+    <li><span>Bengali</span> <span>&#x0985;</span> <span>&#x0986;</span> <span id='bengali'>&nbsp;</span></li>
+    <li><span>Carian</span> <span>&#x102a2;</span> <span>&#x102c5;</span> <span id='carian'>&nbsp;</span></li>
+    <li><span>Cryllic</span> <span>&#x0402;</span> <span>&#x04b1;</span> <span id='cryllic'>&nbsp;</span></li>
+    <li><span>Devanagri</span> <span>&#x0905;</span> <span>&#x0906;</span> <span id='devanagri'>&nbsp;</span></li>
+    <li><span>Ethiopic</span> <span>&#x1220;</span> <span>&#x1221;</span> <span id='ethiopic'>&nbsp;</span></li>
+    <li><span>Georgian</span> <span>&#x10a4;</span> <span>&#x10a5;</span> <span id='georgian'>&nbsp;</span></li>
+    <li><span>Glagolitic</span> <span>&#x2c15;</span> <span>&#x2c45;</span> <span id='glagolitic'>&nbsp;</span></li>
+    <li><span>Gothic</span> <span>&#x10338;</span> <span>&#x10339;</span> <span id='gothic'>&nbsp;</span></li>
+    <li><span>Greek</span> <span>&#x03e2;</span> <span>&#x03e3;</span> <span id='greek'>&nbsp;</span></li>
+    <li><span>Gujarati</span> <span>&#x0a85;</span> <span>&#x0a86;</span> <span id='gujarati'>&nbsp;</span></li>
+    <li><span>Hebrew</span> <span>&#x05df;</span> <span>&#x05e3;</span> <span id='hebrew'>&nbsp;</span></li>
+    <li><span>Hieroglyphs</span> <span>&#x130d0;</span> <span>&#x130d1;</span> <span id='hieroglyphs'>&nbsp;</span></li>
+  </ol>
+  <ol start='16'>
+    <li><span>Japanese</span> <span>&#xFF71;</span> <span>&#x30A2;</span> <span id='japanese'>&nbsp;</span></li>
+    <li><span>Kannada</span> <span>&#x0c89;</span> <span>&#x0c90;</span> <span id='kannada'>&nbsp;</span></li>
+    <li><span>Lao</span> <span>&#x0ec0;</span> <span>&#x0ec1;</span> <span id='lao'>&nbsp;</span></li>
+    <li><span>Latin</span> <span>&#x004c;</span> <span>&#x006c;</span> <span id='latin'>&nbsp;</span></li>
+    <li><span>Malayalam</span> <span>&#x0d05;</span> <span>&#x0d06;</span> <span id='malayalam'>&nbsp;</span></li>
+    <li><span>Mongolian</span> <span>&#x1830;</span> <span>&#x1831;</span> <span id='mongolian'>&nbsp;</span></li>
+    <li><span>Oriya</span> <span>&#x0b05;</span> <span>&#x0b06;</span> <span id='oriya'>&nbsp;</span></li>
+    <li><span>Osmanya</span> <span>&#x1049c;</span> <span>&#x104a9;</span> <span id='osmanya'>&nbsp;</span></li>
+    <li><span>Syriac</span> <span>&#x0712;</span> <span>&#x0713;</span> <span id='syriac'>&nbsp;</span></li>
+    <li><span>Tamil</span> <span>&#x0B85;</span> <span>&#x0BF5;</span> <span id='tamil'>&nbsp;</span></li>
+    <li><span>Telugu</span> <span>&#x0c18;</span> <span>&#x0d18;</span> <span id='telugu'>&nbsp;</span></li>
+    <li><span>Thai</span> <span>&#x0e12;</span> <span>&#x0e40;</span> <span id='thai'>&nbsp;</span></li>
+    <li><span>Tibetan</span> <span>&#x0f11;</span> <span>&#x0f12;</span> <span id='tibetan'>&nbsp;</span></li>
+  </ol>
+  
+  <p id='footer'>
+    Source code at <a href='http://github.com/livingston/fontChecker'>github</a>
+  </p>
+  
+  <script>
+    /* Unicode Font Checker
+     *
+     * @author Livingston Samuel
+     * Based on idea and implementation of Alex Young, http://dailyjs.com/2010/05/12/language-support
+     */
+    (function (W, D) {
+      var fontChecker = (function () {
+        var span = D.createElement('span'),
+            div = D.createElement('div'),
+            body = D.body,
+            firstChild = body.firstChild,
+
+          langs = {
+            'arabic': ['\u06c2', '\u06d2'],
+            'avestan': ['\u10b00', '\u10b01'],
+            'bamum': ['\ua6f3', '\ua6f4'],
+            'bengali': ['\u0985', '\u0986'],
+            'carian': ['\u102a2', '\u102c5'],
+            'cryllic': ['\u0402', '\u04b1'],
+            'devanagri': ['\u0905', '\u0964'],
+            'ethiopic': ['\u1220', '\u1221'],
+            'georgian': ['\u10a4', '\u10a5'],
+            'glagolitic': ['\u2c15', '\u2c45'],
+            'gothic': ['\u10338', '\u10339'],
+            'greek': ['\u03e2', '\u03e3'],
+            'gujarati': ['\u0a85', '\u0a86'],
+            'hebrew': ['\u05df', '\u05e3'],
+            'hieroglyphs': ['\u130d0', '\u130d1'],
+            'japanese': ['\uff71', '\u30a2'],
+            'kannada': ['\u0c89', '\u0c90'],
+            'lao': ['\u0ec0', '\u0ec1'],
+            'latin': ['\u004c', '\u006c'],
+            'malayalam': ['\u0d05', '\u0d06'],
+            'mongolian': ['\u1830', '\u1831'],
+            'oriya': ['\u0b05', '\u0b06'],
+            'osmanya': ['\u1049c', '\u104a9'],
+            'syriac': ['\u0712', '\u0713'],
+            'tamil': ['\u0b85', '\u0bf5'],
+            'telugu': ['\u0c18', '\u0d18'],
+            'thai': ['\u0e12', '\u0e40'],
+            'tibetan': ['\u0f11', '\u0f12']
+          };
+
+        return function (lang) {
+          if (!(lang in langs)) {
+            //return false;
+            return 'error'; //modified for demo
+          }
+
+          var selectedLang = langs[lang],
+              charA = span.cloneNode(false),
+              charB = span.cloneNode(false),
+              holder = div.cloneNode(false),
+              fontExists = false;
+              
+          charA.appendChild(D.createTextNode(selectedLang[0]));
+          charB.appendChild(D.createTextNode(selectedLang[1]));
+
+          holder.appendChild(charA);
+          holder.appendChild(charB);
+
+          body.insertBefore(holder, firstChild);
+
+          fontExists = charA.offsetWidth != charB.offsetWidth;
+
+          body.removeChild(holder);
+
+          return fontExists;
+        };
+      }());
+
+      W.fontChecker = fontChecker;
+
+      //Extra code added for demo
+      var testElems = D.getElementsByTagName('li'), id,
+          len = testElems.length;
+
+      while (len--) {
+        id = testElems[len].children[3].id;
+
+        D.getElementById(id).className = fontChecker(id);
+      }
+    }(window, document));
+  </script>
+</body>
+</html>
