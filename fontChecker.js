@@ -1,4 +1,4 @@
-/* Unicode Font Checker
+/* Unicode Font Checker - http://goo.gl/nzUMu 
  *
  * @author Livingston Samuel
  * Based on idea and implementation of Alex Young, http://dailyjs.com/2010/05/12/language-support
