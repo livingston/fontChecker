@@ -62,7 +62,7 @@
   <p id='footer'>
     Source code at <a href='http://github.com/livingston/fontChecker'>github</a>
   </p>
-  
+
   <script>
     /* Unicode Font Checker
      *
@@ -99,7 +99,7 @@
             'malayalam': ['\u0d05', '\u0d06'],
             'mongolian': ['\u1830', '\u1831'],
             'oriya': ['\u0b05', '\u0b06'],
-            'osmanya': ['\u1049c', '\u104a9'],
+            'osmanya': ['\u10481', '\u10483'],
             'syriac': ['\u0712', '\u0713'],
             'tamil': ['\u0b85', '\u0bf5'],
             'telugu': ['\u0c18', '\u0d18'],
@@ -118,7 +118,7 @@
               charB = span.cloneNode(false),
               holder = div.cloneNode(false),
               fontExists = false;
-              
+
           charA.appendChild(D.createTextNode(selectedLang[0]));
           charB.appendChild(D.createTextNode(selectedLang[1]));
 
@@ -130,6 +130,7 @@
           fontExists = charA.offsetWidth != charB.offsetWidth;
 
           body.removeChild(holder);
+          holder = charA = charB = null;
 
           return fontExists;
         };
