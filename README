@@ -5,6 +5,7 @@ Unicode Font Checker
 
 Supported Languages:
  * Arabic
+ * Aramic, Imperial
  * Avestan
  * Bamum
  * Bengali
@@ -18,7 +19,8 @@ Supported Languages:
  * Greek
  * Gujarati
  * Hebrew
- * Egyptian Hieroglyphs
+ * Hieroglyphs, Egyptian
+ * Hiragana
  * Japanese
  * Kannada
  * Lao

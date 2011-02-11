@@ -12,6 +12,7 @@
 
             langs = {
                 'arabic': ['\u06c2', '\u06d2'],
+                'aramic': ['\u10844', '\u10846'],
                 'avestan': ['\u10b00', '\u10b01'],
                 'bamum': ['\ua6f3', '\ua6f4'],
                 'bengali': ['\u0985', '\u0986'],
@@ -26,6 +27,7 @@
                 'gujarati': ['\u0a85', '\u0a86'],
                 'hebrew': ['\u05df', '\u05e3'],
                 'hieroglyphs': ['\u130d0', '\u130d1'],
+                'hiragana': ['\u3044', '\u3045'],
                 'japanese': ['\uff71', '\u30a2'],
                 'kannada': ['\u0c89', '\u0c90'],
                 'lao': ['\u0ec0', '\u0ec1'],
