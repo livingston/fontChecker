@@ -31,7 +31,7 @@
                 'lao': ['\u0ec0', '\u0ec1'],
                 'latin': ['\u004c', '\u006c'],
                 'malayalam': ['\u0d05', '\u0d06'],
-                'mongolian': ['\u1830', '\u1831'],
+                'mongolian': ['\u1830', '\u1827'],
                 'oriya': ['\u0b05', '\u0b06'],
                 'osmanya': ['\u10481', '\u10483'],
                 'syriac': ['\u0712', '\u0713'],
