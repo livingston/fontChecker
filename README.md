@@ -37,3 +37,5 @@ Supported Languages:
 
  Languages that cannot be detected:
   * Bopomofo
+  
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/livingston/fontchecker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
