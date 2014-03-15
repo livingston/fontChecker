@@ -16,7 +16,7 @@
                 'avestan': ['\u10b00', '\u10b01'],
                 'bamum': ['\ua6f3', '\ua6f4'],
                 'bengali': ['\u0985', '\u0986'],
-                'carian': ['\u102a2', '\u102c5'],
+                'carian': ['\ud800\udea2', '\ud800\udec5'],
                 'cryllic': ['\u0402', '\u04b1'],
                 'devanagri': ['\u0930', '\u0964'],
                 'ethiopic': ['\u1220', '\u1221'],
