@@ -1,4 +1,4 @@
-/* Unicode Font Checker - http://goo.gl/nzUMu 
+/* Unicode Font Checker - http://goo.gl/nzUMu
  *
  * @author Livingston Samuel
  * Based on idea and implementation of Alex Young, http://dailyjs.com/2010/05/12/language-support
@@ -27,7 +27,7 @@
                 'gujarati': ['\u0a85', '\u0a86'],
                 'hebrew': ['\u05df', '\u05e3'],
                 'hieroglyphs': ['\u130d0', '\u130d1'],
-                'hiragana': ['\u3044', '\u3045'],
+                'hiragana': ['\u3044', '\uff70'],
                 'japanese': ['\uff71', '\u30a2'],
                 'kannada': ['\u0c89', '\u0c90'],
                 'lao': ['\u0ec0', '\u0ec1'],
