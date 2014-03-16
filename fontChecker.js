@@ -12,8 +12,8 @@
 
             langs = {
                 'arabic': ['\u06c2', '\u06d2'],
-                'aramic': ['\u10844', '\u10846'],
-                'avestan': ['\u10b00', '\u10b01'],
+                'aramic': ['\ud802\udc44', '\ud802\udc46'],
+                'avestan': ['\ud802\udf00', '\ud802\udf01'],
                 'bamum': ['\ua6f3', '\ua6f4'],
                 'bengali': ['\u0985', '\u0986'],
                 'carian': ['\ud800\udea2', '\ud800\udec5'],
