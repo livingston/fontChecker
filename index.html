@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>Unicode Font Checker</title>
+
+  <style>
+    body {
+      font:16px "Lucida Grande","Lucida Sans","Lucida Sans Unicode",Verdana,sans-serif;
+      color:#000;
+      cursor:default
+    }
+
+    ol { float:left; margin:0 55px 0 0 }
+    li { margin:0 0 10px; padding:0 }
+    li span { display: inline-block }
+    li span:first-child { width: 200px }
+    li span:first-child ~ span { width: 50px }
+    li span.true { background:green }
+    li span.false { background:red }
+    li span.error { background:yellow }
+
+    #footer { clear:both; padding:25px 0 0 }
+  </style>
+</head>
+<body>
+  <h2>Unicode Font Checker</h2>
+
+  <ol>
+    <li><span>Arabic</span> <span>&#x06c2;</span> <span>&#x06d2;</span> <span id='arabic'>&nbsp;</span></li>
+    <li><span>Aramic, Imperial</span> <span>&#x10844;</span> <span>&#x10846;</span> <span id='aramic'>&nbsp;</span></li>
+    <li><span>Avestan</span> <span>&#x10b00;</span> <span>&#x10b01;</span> <span id='avestan'>&nbsp;</span></li>
+    <li><span>Bamum</span> <span>&#xa6f3;</span> <span>&#xa6f4;</span> <span id='bamum'>&nbsp;</span></li>
+    <li><span>Bengali</span> <span>&#x0985;</span> <span>&#x0986;</span> <span id='bengali'>&nbsp;</span></li>
+    <li><span>Carian</span> <span>&#x102a2;</span> <span>&#x102c5;</span> <span id='carian'>&nbsp;</span></li>
+    <li><span>Cyrillic</span> <span>&#x0402;</span> <span>&#x04b1;</span> <span id='cyrillic'>&nbsp;</span></li>
+    <li><span>Devanagri</span> <span>&#x0930;</span> <span>&#x0906;</span> <span id='devanagri'>&nbsp;</span></li>
+    <li><span>Ethiopic</span> <span>&#x1220;</span> <span>&#x1221;</span> <span id='ethiopic'>&nbsp;</span></li>
+    <li><span>Georgian</span> <span>&#x10a4;</span> <span>&#x10a5;</span> <span id='georgian'>&nbsp;</span></li>
+    <li><span>Glagolitic</span> <span>&#x2c15;</span> <span>&#x2c45;</span> <span id='glagolitic'>&nbsp;</span></li>
+    <li><span>Gothic</span> <span>&#x10338;</span> <span>&#x10339;</span> <span id='gothic'>&nbsp;</span></li>
+    <li><span>Greek</span> <span>&#x03e2;</span> <span>&#x03e3;</span> <span id='greek'>&nbsp;</span></li>
+    <li><span>Gujarati</span> <span>&#x0a85;</span> <span>&#x0a86;</span> <span id='gujarati'>&nbsp;</span></li>
+    <li><span>Hebrew</span> <span>&#x05df;</span> <span>&#x05e3;</span> <span id='hebrew'>&nbsp;</span></li>
+  </ol>
+  <ol start='16'>
+    <li><span>Hieroglyphs</span> <span>&#x130d0;</span> <span>&#x130d1;</span> <span id='hieroglyphs'>&nbsp;</span></li>
+    <li><span>Hiragana</span> <span>&#x3044;</span> <span>&#xFF70;</span> <span id='hiragana'>&nbsp;</span></li>
+    <li><span>Japanese</span> <span>&#xFF71;</span> <span>&#x30A2;</span> <span id='japanese'>&nbsp;</span></li>
+    <li><span>Kannada</span> <span>&#x0c89;</span> <span>&#x0c90;</span> <span id='kannada'>&nbsp;</span></li>
+    <li><span>Lao</span> <span>&#x0ec0;</span> <span>&#x0ec1;</span> <span id='lao'>&nbsp;</span></li>
+    <li><span>Latin</span> <span>&#x004c;</span> <span>&#x006c;</span> <span id='latin'>&nbsp;</span></li>
+    <li><span>Malayalam</span> <span>&#x0d05;</span> <span>&#x0d06;</span> <span id='malayalam'>&nbsp;</span></li>
+    <li><span>Mongolian</span> <span>&#x1830;</span> <span>&#x1827;</span> <span id='mongolian'>&nbsp;</span></li>
+    <li><span>Oriya</span> <span>&#x0b05;</span> <span>&#x0b06;</span> <span id='oriya'>&nbsp;</span></li>
+    <li><span>Osmanya</span> <span>&#x10481;</span> <span>&#x10483;</span> <span id='osmanya'>&nbsp;</span></li>
+    <li><span>Syriac</span> <span>&#x0712;</span> <span>&#x0713;</span> <span id='syriac'>&nbsp;</span></li>
+    <li><span>Tamil</span> <span>&#x0B85;</span> <span>&#x0BF5;</span> <span id='tamil'>&nbsp;</span></li>
+    <li><span>Telugu</span> <span>&#x0c18;</span> <span>&#x0d18;</span> <span id='telugu'>&nbsp;</span></li>
+    <li><span>Thai</span> <span>&#x0e12;</span> <span>&#x0e40;</span> <span id='thai'>&nbsp;</span></li>
+    <li><span>Tibetan</span> <span>&#x0f11;</span> <span>&#x0f12;</span> <span id='tibetan'>&nbsp;</span></li>
+  </ol>
+
+  <p id='footer'>
+    Source code at <a href='http://github.com/livingston/fontChecker'>github</a>
+  </p>
+
+  <script src="fontChecker.min.js"></script>
+  <script>
+      //demo
+    (function (W, D) {
+      var testElems = D.getElementsByTagName('li'), id,
+          len = testElems.length;
+
+      while (len--) {
+        s = testElems[len].children[3];
+
+        s.className = fontChecker(s.id);
+      }
+    }(window, document));
+  </script>
+</body>
+</html>
