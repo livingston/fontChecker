@@ -1,9 +1,12 @@
-Unicode Font Checker
+#Unicode Font Checker
 
 * Detects the existance of fonts to display the Unicode Character of a particular language.
 * Currenlty detects support for 28 languages.
 
-Supported Languages:
+##Usage
+`fontChecker('arabic');` → returns `true` if the font for Arabic is installed 
+
+###Supported Languages:
  * Arabic
  * Aramic, Imperial
  * Avestan
