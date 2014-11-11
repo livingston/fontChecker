@@ -1,10 +1,10 @@
 #Unicode Font Checker
 
 * Detects the existance of fonts to display the Unicode Character of a particular language.
-* Currenlty detects support for 28 languages.
+* Currenlty detects support for 30 languages.
 
 ##Usage
-`fontChecker('arabic');` → returns `true` if the font for Arabic is installed 
+`fontChecker('arabic');` → *returns* `true` *if the font for Arabic is installed*
 
 ###Supported Languages:
  * Arabic
@@ -38,5 +38,5 @@
  * Thai
  * Tibetan
 
- Languages that cannot be detected:
-  * Bopomofo
+Languages that cannot be detected:
+ * Bopomofo
