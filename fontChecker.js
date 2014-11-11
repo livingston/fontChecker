@@ -26,7 +26,7 @@
                 'greek': ['\u03e2', '\u03e3'],
                 'gujarati': ['\u0a85', '\u0a86'],
                 'hebrew': ['\u05df', '\u05e3'],
-                'hieroglyphs': ['\u130d0', '\u130d1'],
+                'hieroglyphs': ['\u130d', '\u130e'],
                 'hiragana': ['\u3044', '\uff70'],
                 'japanese': ['\uff71', '\u30a2'],
                 'kannada': ['\u0c89', '\u0c90'],
