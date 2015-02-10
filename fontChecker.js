@@ -18,7 +18,7 @@
                 'bengali': ['\u0985', '\u0986'],
                 'carian': ['\ud800\udea2', '\ud800\udec5'],
                 'cyrillic': ['\u0402', '\u04b1'],
-                'devanagri': ['\u0930', '\u0964'],
+                'devanagri': ['\u0930', '\u0906'],
                 'ethiopic': ['\u1220', '\u1221'],
                 'georgian': ['\u10a4', '\u10a5'],
                 'glagolitic': ['\u2c15', '\u2c45'],
