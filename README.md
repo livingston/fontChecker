@@ -1,4 +1,4 @@
-#Unicode Font Checker
+#Unicode Font Checker [![Code Climate](https://codeclimate.com/github/livingston/fontChecker/badges/gpa.svg)](https://codeclimate.com/github/livingston/fontChecker)
 
 * Detects the existance of fonts to display the Unicode Character of a particular language.
 * Currenlty detects support for 30 languages.
